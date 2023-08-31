@@ -50,7 +50,7 @@ const uiComponent = () => (
             src: 'thumbnail.png',
           },
         }}
-        uiText={{ value: 'SDK7 1  Smart Wearable', fontSize: 18 }}
+        uiText={{ value: 'SDK7 37  Smart Wearable', fontSize: 18 }}
       />
       <Label
         onMouseDown={() => {console.log('Player Position clicked !')}}

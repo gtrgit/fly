@@ -105,7 +105,7 @@ function createPlatform(position: Vector3) {
   Transform.create(platform, {
     position: position,
     // scale: Vector3.create(5, .5, 5)
-    scale: Vector3.create(1, 1.385, 1)
+    scale: Vector3.create(1, 1.37, 1)
 
     // scale: Vector3.create(1, 1.385, 1),
 
@@ -140,9 +140,10 @@ function handleVerticalMovement() {
     if (platform && !hovering) {
        const platformTransform = Transform.getMutable(platform);
 
-      const newPlatformPosition = calculateNewPosition(playerTransform.position, offset);
+      // const newPlatformPosition = calculateNewPosition(playerTransform.position, offset);
       
       // platformTransform.position = newPlatformPosition;
+
       // const updatedPos = engine.addEntity()
       
       // Transform.create(updatedPos, {position:  {x : platformTransform.position.x, 
@@ -195,16 +196,16 @@ function calculateOffset(cameraForward: Vector3, speed: number): Vector3 {
 
 // Calculate new position
 function calculateNewPosition(position: Vector3, offset: Vector3): Vector3 {
-  // const newPosition = Vector3.create(
-  //   position.x + offset.x,
-  //   position.y + offset.y,
-  //   position.z + offset.z
-  // );
   const newPosition = Vector3.create(
-    position.x ,
+    position.x + offset.x,
     position.y + offset.y,
-    position.z 
+    position.z + offset.z
   );
+  // const newPosition = Vector3.create(
+  //   position.x ,
+  //   position.y + offset.y,
+  //   position.z 
+  // );
   return newPosition;
 }
 
